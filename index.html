@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tweet this</title>
+</head>
+<body>
+    Drag this to your bookmarks toolbar: <a id="bookmarklet" href="">tweet this</a>
+    <script>
+    fetch(`${window.location.href}/tweet-this.js`)
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(text) {
+            document.querySelector('#bookmarklet').
+            setAttribute('href','javascript:' + 
+            text.replace(/\s/g,''));
+    });
+    </script>    
+</body>
+</html>
