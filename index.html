@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tweet this</title>
+    <style>
+        body {font-family: helvetica, sans-serif; max-width: 40em;margin: 1em auto}
+        a {
+            color: #fff;
+            background: #369;
+            padding: 2px 5px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    Drag this to your bookmarks toolbar: <a id="bookmarklet" href="">tweet this</a>
+    <h1>Tweet this</h1>
+    <p>A bookmarklet to tweet the current page. Highlight any text and hit it and you can tweet in the format of:</p>
+<pre>
+
+“Tweet text”
+
+https://example.com
+
+</pre>
+    <p>Drag this to your bookmarks toolbar: <a id="bookmarklet" href="">tweet this</a></p>
     <script>
     fetch(`${window.location.href}/tweet-this.js`)
         .then(function(response) {
