@@ -1,14 +1,14 @@
 (function(){
-    n=getSelection().anchorNode;
+    var n = decodeURIComponent(document.getSelection());
     if(!n) {
-        t = document.title;
-    } else {
-        t = n.nodeType === 3 ? n.data : n.innerText;
+      n = document.title;
     }
-    t = '“' + t.trim() + '”\n\n';
+  
+    n = '“' + n.trim() + '”\n\n';
+  
     window.open(
-        `https://twitter.com/intent/tweet?text=
-        ${encodeURIComponent(t)}
-        ${document.location.href}`
-    )
+      `https://twitter.com/intent/tweet?text=
+      ${encodeURIComponent(n)}
+      ${document.location.href}`
+    );
 })();
